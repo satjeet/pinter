@@ -1,5 +1,11 @@
 %h1= @pin.title
 %p= @pin.description
+%p
+Enviado por
+= @pin.user.email
+
+%br/
 
 = link_to "Atras", root_path
 = link_to "Editar", edit_pin_path
+= link_to "Eliminar", pin_path, method: :delete, data:{ confirm: "Estas seguro?"}
