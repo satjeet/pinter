@@ -1,11 +1,24 @@
-%h1= @pin.title
-%p= @pin.description
-%p
-Enviado por
-= @pin.user.email
-
-%br/
-
-= link_to "Atras", root_path
-= link_to "Editar", edit_pin_path
-= link_to "Eliminar", pin_path, method: :delete, data:{ confirm: "Estas seguro?"}
+#pin_show.row
+	.col-md-8.col-md-offset-2
+		.panel.panel-default
+			.panel-heading.pin_image
+				= image_tag @pin.image.url
+			.panel-body
+				%h1= @pin.title
+				%p= @pin.description
+				%p
+			.panel-footer
+				.row
+					.col-md-6
+						%p.user
+						Enviado por
+						= @pin.user.email
+					.col-md-6
+						.btn-group.pull-right
+							= link_to like_pin_path, method: :put, class: "btn btn-default" do
+								%span.glyphicon.glyphicon-heart
+									= @pin.get_upvotes.size
+							- if user_signed_in?
+								= link_to "Editar", edit_pin_path , class: "btn btn-default"
+								= link_to "Eliminar", pin_path, class: "btn btn-default", method: :delete, data:{ confirm: "Estas seguro?"}
+	
