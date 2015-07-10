@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descripcion_corta: MyString
+  descripcion_larga: MyText
+  user_id: 
+  fecha_entrega: 2015-07-10
+  hora_entrega: 2015-07-10 16:38:27
+  sucursal_entrega: MyString
+  direccion_entrega: MyText
+  estado_pedido: MyString
+  cliente: MyString
+  numero_guia: MyString
+  metodo_pago: MyString
+  abono: 1
+  precio_total: 1
+  celular: MyString
+  telefono: MyString
+  correo: MyString
+
+two:
+  descripcion_corta: MyString
+  descripcion_larga: MyText
+  user_id: 
+  fecha_entrega: 2015-07-10
+  hora_entrega: 2015-07-10 16:38:27
+  sucursal_entrega: MyString
+  direccion_entrega: MyText
+  estado_pedido: MyString
+  cliente: MyString
+  numero_guia: MyString
+  metodo_pago: MyString
+  abono: 1
+  precio_total: 1
+  celular: MyString
+  telefono: MyString
+  correo: MyString

@@ -1,0 +1,81 @@
+<%= form_for(@pedido) do |f| %>
+  <% if @pedido.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pedido.errors.count, "error") %> prohibited this pedido from being saved:</h2>
+
+      <ul>
+      <% @pedido.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descripcion_corta %><br>
+    <%= f.text_field :descripcion_corta %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion_larga %><br>
+    <%= f.text_area :descripcion_larga %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_entrega %><br>
+    <%= f.date_select :fecha_entrega %>
+  </div>
+  <div class="field">
+    <%= f.label :hora_entrega %><br>
+    <%= f.time_select :hora_entrega %>
+  </div>
+  <div class="field">
+    <%= f.label :sucursal_entrega %><br>
+    <%= f.text_field :sucursal_entrega %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion_entrega %><br>
+    <%= f.text_area :direccion_entrega %>
+  </div>
+  <div class="field">
+    <%= f.label :estado_pedido %><br>
+    <%= f.text_field :estado_pedido %>
+  </div>
+  <div class="field">
+    <%= f.label :cliente %><br>
+    <%= f.text_field :cliente %>
+  </div>
+  <div class="field">
+    <%= f.label :numero_guia %><br>
+    <%= f.text_field :numero_guia %>
+  </div>
+  <div class="field">
+    <%= f.label :metodo_pago %><br>
+    <%= f.text_field :metodo_pago %>
+  </div>
+  <div class="field">
+    <%= f.label :abono %><br>
+    <%= f.number_field :abono %>
+  </div>
+  <div class="field">
+    <%= f.label :precio_total %><br>
+    <%= f.number_field :precio_total %>
+  </div>
+  <div class="field">
+    <%= f.label :celular %><br>
+    <%= f.text_field :celular %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono %><br>
+    <%= f.text_field :telefono %>
+  </div>
+  <div class="field">
+    <%= f.label :correo %><br>
+    <%= f.text_field :correo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

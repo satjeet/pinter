@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pedidos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descripcion corta</th>
+      <th>Descripcion larga</th>
+      <th>User</th>
+      <th>Fecha entrega</th>
+      <th>Hora entrega</th>
+      <th>Sucursal entrega</th>
+      <th>Direccion entrega</th>
+      <th>Estado pedido</th>
+      <th>Cliente</th>
+      <th>Numero guia</th>
+      <th>Metodo pago</th>
+      <th>Abono</th>
+      <th>Precio total</th>
+      <th>Celular</th>
+      <th>Telefono</th>
+      <th>Correo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pedidos.each do |pedido| %>
+      <tr>
+        <td><%= pedido.descripcion_corta %></td>
+        <td><%= pedido.descripcion_larga %></td>
+        <td><%= pedido.user_id %></td>
+        <td><%= pedido.fecha_entrega %></td>
+        <td><%= pedido.hora_entrega %></td>
+        <td><%= pedido.sucursal_entrega %></td>
+        <td><%= pedido.direccion_entrega %></td>
+        <td><%= pedido.estado_pedido %></td>
+        <td><%= pedido.cliente %></td>
+        <td><%= pedido.numero_guia %></td>
+        <td><%= pedido.metodo_pago %></td>
+        <td><%= pedido.abono %></td>
+        <td><%= pedido.precio_total %></td>
+        <td><%= pedido.celular %></td>
+        <td><%= pedido.telefono %></td>
+        <td><%= pedido.correo %></td>
+        <td><%= link_to 'Show', pedido %></td>
+        <td><%= link_to 'Edit', edit_pedido_path(pedido) %></td>
+        <td><%= link_to 'Destroy', pedido, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pedido', new_pedido_path %>
