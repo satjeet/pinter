@@ -1,6 +1,7 @@
 class PedidosController < ApplicationController
   before_action :set_pedido, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!, :except => [:index, :show]
+  before_action :authorized_user, only: [:edit, :update, :destroy]
   # GET /pedidos
   # GET /pedidos.json
   def index
@@ -14,7 +15,7 @@ class PedidosController < ApplicationController
 
   # GET /pedidos/new
   def new
-    @pedido = Pedido.new
+    @pedido = current_user.pedidos.build
   end
 
   # GET /pedidos/1/edit
@@ -23,8 +24,10 @@ class PedidosController < ApplicationController
 
   # POST /pedidos
   # POST /pedidos.json
+ 
+  
   def create
-    @pedido = Pedido.new(pedido_params)
+    @pedido = current_user.pedidos.build(pedido_params)
 
     respond_to do |format|
       if @pedido.save
@@ -36,6 +39,11 @@ class PedidosController < ApplicationController
       end
     end
   end
+
+ def authorized_user
+  @linkpedido = current_user.pedidos.find_by(id: params[:id])
+  redirect_to pedidos_path, notice: "Not authorized to edit this link" if @pedido.nil?
+end
 
   # PATCH/PUT /pedidos/1
   # PATCH/PUT /pedidos/1.json

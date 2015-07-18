@@ -1,0 +1,15 @@
+/home/satjeet/.rbenv/versions/2.2.2/bin/ruby -r ./siteconf20150714-7748-nioszx.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling context.c
+compiling threads.c
+compiling locker.c
+compiling breakpoint.c
+compiling byebug.c
+linking shared-object byebug/byebug.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20150714-7748-jys5jq/byebug

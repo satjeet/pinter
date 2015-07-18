@@ -1,0 +1,12 @@
+/home/satjeet/.rbenv/versions/2.2.2/bin/ruby -r ./siteconf20150714-7748-1ukuhya.rb extconf.rb
+
+make "DESTDIR=" clean
+make: *** No rule to make target 'clean'.  Alto.
+
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+make "DESTDIR=" install
+echo "Nada."
+Nada.

@@ -1,0 +1,40 @@
+%h1 Listado de Pedidos Pedidos
+
+.table-responsive
+  %table.table
+    %tr
+      %th descripcion corta
+      %th Descripcion larga
+      %th User
+      %th Fecha entrega
+      %th Hora entrega
+      %th Sucursal entrega
+      %th Direccion entrega
+      %th Estado pedido
+      %th Cliente
+      %th Numero guia
+      %th Metodo Pago
+      %th Abono
+      %th Precio Total
+      %th Celular
+      %th Telefono
+      %th Correo
+
+    %tr
+      - @pedidos.each do |pedido|
+        %td= pedido.descripcion_corta
+        %td= pedido.descripcion_larga 
+        %td= pedido.user_id 
+        %td= pedido.fecha_entrega 
+        %td= pedido.hora_entrega
+        %td= pedido.sucursal_entrega 
+        %td= pedido.direccion_entrega
+        %td= pedido.estado_pedido 
+        %td= pedido.cliente 
+        %td= pedido.numero_guia
+        %td= pedido.metodo_pago 
+        %td= pedido.abono
+        %td= pedido.precio_total
+        %td= pedido.celular
+        %td= pedido.telefono 
+        %td= pedido.correo 

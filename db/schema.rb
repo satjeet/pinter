@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713171948) do
+ActiveRecord::Schema.define(version: 20150718003008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,8 +33,11 @@ ActiveRecord::Schema.define(version: 20150713171948) do
     t.string   "celular"
     t.string   "telefono"
     t.string   "correo"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "numero_guia_matriz"
+    t.string   "numero_pedido_general"
+    t.string   "texto_torta"
   end
 
   add_index "pedidos", ["user_id"], name: "index_pedidos_on_user_id", using: :btree
