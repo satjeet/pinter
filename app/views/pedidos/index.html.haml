@@ -3,16 +3,16 @@
 .table-responsive
   %table.table
     %tr
-      %th Numero del Pedido
+      %th ID Pedido
       %th Cliente
-      %th descripcion corta
+      %th Descripcion corta
       %th Estado pedido
       %th Fecha entrega
       %th Hora entrega
       %th Sucursal entrega
       %th Direccion entrega
       %th Abono
-      %th User
+      %th Encargado
 
     - @pedidos.each do |pedido|
       %tr
@@ -25,4 +25,4 @@
         %td= pedido.sucursal_entrega 
         %td= pedido.direccion_entrega
         %td= pedido.abono
-        %td= pedido.user_id 
+        %td= pedido.user.username

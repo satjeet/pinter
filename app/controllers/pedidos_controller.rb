@@ -77,6 +77,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pedido_params
-      params.require(:pedido).permit(:descripcion_corta, :descripcion_larga, :user_id, :fecha_entrega, :hora_entrega, :sucursal_entrega, :direccion_entrega, :estado_pedido, :cliente, :numero_guia, :metodo_pago, :abono, :precio_total, :celular, :telefono, :correo)
+      params.require(:pedido).permit(:numero_pedido_general,:numero_guia_matriz,:descripcion_corta, :descripcion_larga, :user_id, :fecha_entrega, :hora_entrega, :sucursal_entrega, :direccion_entrega, :estado_pedido, :cliente, :numero_guia, :metodo_pago, :abono, :precio_total, :celular, :telefono, :correo)
     end
 end

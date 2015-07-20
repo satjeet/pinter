@@ -1,84 +1,131 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
 
-<p>
-  <strong>Descripcion corta:</strong>
-  <%= @pedido.descripcion_corta %>
-</p>
+   <div class="col-xs-6 col-ms-6 col-md-6"> 
+     <h2> ID Pedido:
+       <%= @pedido.numero_pedido_general %>
+     </h2>
+   </div>
 
-<p>
-  <strong>Descripcion larga:</strong>
-  <%= @pedido.descripcion_larga %>
-</p>
+   <div class="col-xs-6 col-ms-6 col-md-3"> 
+    <strong>Numero de Guia VM:</strong>
+    <%= @pedido.numero_guia_matriz %>
+  </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @pedido.user_id %>
-</p>
+  <div class="col-xs-6 col-ms-6 col-md-3"> 
+   <strong>Numero de Guia Local:</strong>
+   <%= @pedido.numero_guia %>
+ </div>
 
-<p>
-  <strong>Fecha entrega:</strong>
-  <%= @pedido.fecha_entrega %>
-</p>
 
-<p>
-  <strong>Hora entrega:</strong>
-  <%= @pedido.hora_entrega %>
-</p>
 
-<p>
-  <strong>Sucursal entrega:</strong>
-  <%= @pedido.sucursal_entrega %>
-</p>
+</div>
 
-<p>
-  <strong>Direccion entrega:</strong>
-  <%= @pedido.direccion_entrega %>
-</p>
+<div class="row">
+  <div class="col-xs-6 col-ms-6 col-md-6"> 
+    <strong>Cliente:</strong>
+    <%= @pedido.cliente %>
+  </div>
 
-<p>
+  <div class="col-xs-6 col-ms-6 col-md-6"> 
+    <strong>Encargado:</strong>
+    <%= @pedido.user.username %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6 col-ms-6 col-md-6"> 
+    <strong>Descripcion corta:</strong>
+    <%= @pedido.descripcion_corta %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6 col-ms-6 col-md-6"> 
+   <strong>Descripcion larga:</strong>
+   <%= @pedido.descripcion_larga %>
+ </div>
+</div>
+
+
+<div class="row">
+
+ <div class="col-xs-6 col-ms-6 col-md-6"> 
   <strong>Estado pedido:</strong>
   <%= @pedido.estado_pedido %>
-</p>
+</div>
 
-<p>
-  <strong>Cliente:</strong>
-  <%= @pedido.cliente %>
-</p>
-
-<p>
-  <strong>Numero guia:</strong>
-  <%= @pedido.numero_guia %>
-</p>
-
-<p>
-  <strong>Metodo pago:</strong>
-  <%= @pedido.metodo_pago %>
-</p>
-
-<p>
+<div class="col-xs-6 col-ms-6 col-md-3"> 
   <strong>Abono:</strong>
   <%= @pedido.abono %>
-</p>
+</div>
 
-<p>
-  <strong>Precio total:</strong>
+<div class="col-xs-6 col-ms-6 col-md-3"> 
+ <strong>Metodo pago:</strong>
+ <%= @pedido.metodo_pago %>
+</div>
+
+
+
+</div>
+
+
+<div class="row">
+  <div class="col-xs-6 col-ms-6 col-md-6"> 
+  <strong>Fecha entrega:</strong>
+  <%= @pedido.fecha_entrega %>
+  </div>
+
+  <div class="col-xs-6 col-ms-6 col-md-6"> 
+   <strong>Precio total:</strong>
   <%= @pedido.precio_total %>
-</p>
+  </div>
+</div>
 
-<p>
+
+<div class="row">
+  <div class="col-xs-6 col-ms-6 col-md-6"> 
+ <strong>Hora entrega:</strong>
+  <%= @pedido.hora_entrega %>
+  </div>
+
+  <div class="col-xs-6 col-ms-6 col-md-6"> 
   <strong>Celular:</strong>
   <%= @pedido.celular %>
-</p>
+  </div>
+</div>
 
-<p>
+
+<div class="row">
+  <div class="col-xs-6 col-ms-6 col-md-6"> 
+  <strong>Sucursal entrega:</strong>
+  <%= @pedido.sucursal_entrega %>
+  </div>
+
+  <div class="col-xs-6 col-ms-6 col-md-6"> 
   <strong>Telefono:</strong>
   <%= @pedido.telefono %>
-</p>
+  </div>
+</div>
 
-<p>
+
+
+<div class="row">
+  <div class="col-xs-6 col-ms-6 col-md-6"> 
+  <strong>Direccion entrega:</strong>
+  <%= @pedido.direccion_entrega %>
+  </div>
+
+  <div class="col-xs-6 col-ms-6 col-md-6"> 
   <strong>Correo:</strong>
   <%= @pedido.correo %>
-</p>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_pedido_path(@pedido) %> |
-<%= link_to 'Back', pedidos_path %>
+
+
+</div>
+
+<%= link_to 'Edit', edit_pedido_path(@pedido) , class: "btn btn-default"%> 
+<%= link_to 'Back', pedidos_path , class: "btn btn-default"%> 

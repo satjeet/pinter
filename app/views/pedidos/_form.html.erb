@@ -1,81 +1,229 @@
-<%= form_for(@pedido) do |f| %>
-  <% if @pedido.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@pedido.errors.count, "error") %> prohibited this pedido from being saved:</h2>
+<%= simple_form_for(@pedido) do |f| %>
+<% if @pedido.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@pedido.errors.count, "error") %> prohibited this pedido from being saved:</h2>
 
-      <ul>
-      <% @pedido.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <ul>
+    <% @pedido.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+<div class="container">
+
+ <div class="row">
+   <div class="col-xs-6 col-ms-6 col-md-6"> 
+     <div class="field">
+       <%= f.input :numero_pedido_general,label:' ID del pedido', disabled: false  %>
+     </div>
+
+
+   </div>
+
+   <div class="col-xs-6 col-ms-6 col-md-3"> 
+     <div class="field">
+      <%= f.label :numero_guia_matriz , value: 'Numero de Guia VM:' %><br>
+      <%= f.text_field :numero_guia_matriz %>
     </div>
-  <% end %>
 
+  </div>
+
+  <div class="col-xs-6 col-ms-6 col-md-3"> 
+    <div class="field">
+      <%= f.label :numero_guia %><br>
+      <%= f.text_field :numero_guia %>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+<div class="row">
+<div class="col-xs-6 col-ms-6 col-md-6"> 
+  <div class="field">
+    <%= f.label :cliente , value: 'Cliente:' %><br>
+    <%= f.text_field :cliente  %>
+  </div>
+</div>
+
+<div class="col-xs-6 col-ms-6 col-md-6"> 
+ <div class="field">
+  <%= f.label :user_id , value: 'Encargado del pedido:' %><br>
+ <%= @pedido.user.username %>
+  
+
+
+</div>
+</div>
+
+
+
+
+</div>
+<!-- fin bloque row -->
+
+<div class="row">
+
+ <div class="col-xs-6 col-ms-6 col-md-6"> 
   <div class="field">
     <%= f.label :descripcion_corta %><br>
     <%= f.text_field :descripcion_corta %>
   </div>
+</div>
+
+</div>
+
+
+<div class="row">
+
+ <div class="col-xs-6 col-ms-6 col-md-8"> 
   <div class="field">
-    <%= f.label :descripcion_larga %><br>
-    <%= f.text_area :descripcion_larga %>
+   <%= f.label :descripcion_larga %><br>
+   <%= f.text_area :descripcion_larga %>
+ </div>
+</div>
+
+</div>
+
+
+
+<div class="row">
+ <div class="col-xs-6 col-ms-6 col-md-6"> 
+   <div class="field">
+     <%= f.input :estado_pedido,label:' Estado Pedido', disabled: false  %>
+   </div>
+
+
+ </div>
+
+ <div class="col-xs-6 col-ms-6 col-md-3"> 
+   <div class="field">
+    <%= f.label :abono , value: 'Numero de Guia VM:' %><br>
+    <%= f.text_field :abono %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :fecha_entrega %><br>
-    <%= f.date_select :fecha_entrega %>
-  </div>
-  <div class="field">
-    <%= f.label :hora_entrega %><br>
-    <%= f.time_select :hora_entrega %>
-  </div>
-  <div class="field">
-    <%= f.label :sucursal_entrega %><br>
-    <%= f.text_field :sucursal_entrega %>
-  </div>
-  <div class="field">
-    <%= f.label :direccion_entrega %><br>
-    <%= f.text_area :direccion_entrega %>
-  </div>
-  <div class="field">
-    <%= f.label :estado_pedido %><br>
-    <%= f.text_field :estado_pedido %>
-  </div>
-  <div class="field">
-    <%= f.label :cliente %><br>
-    <%= f.text_field :cliente %>
-  </div>
-  <div class="field">
-    <%= f.label :numero_guia %><br>
-    <%= f.text_field :numero_guia %>
-  </div>
+
+</div>
+
+<div class="col-xs-6 col-ms-6 col-md-3"> 
   <div class="field">
     <%= f.label :metodo_pago %><br>
     <%= f.text_field :metodo_pago %>
   </div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="row">
+ <div class="col-xs-6 col-ms-6 col-md-6"> 
   <div class="field">
-    <%= f.label :abono %><br>
-    <%= f.number_field :abono %>
+    <%= f.label :fecha_entrega , value: 'Fecha Entrega:' %><br>
+    <%= f.date_select :fecha_entrega,as: :date, start_year: Date.today.year, order: [:day, :month, :year], label:' Fecha Entrega:', disabled: false  %>
   </div>
+
+
+</div>
+
+<div class="col-xs-6 col-ms-6 col-md-6"> 
+ <div class="field">
+  <%= f.label :precio_total , value: 'Valor Total:' %><br>
+  <%= f.number_field :precio_total %>
+</div>
+</div>
+
+
+
+</div>
+<!-- fin bloque row -->
+
+
+
+<div class="row">
+<div class="col-xs-6 col-ms-6 col-md-6"> 
   <div class="field">
-    <%= f.label :precio_total %><br>
-    <%= f.number_field :precio_total %>
+    <%= f.label :hora_entrega , value: 'Hora Entrega:' %><br>
+    <%= f.time_select :hora_entrega  %>
   </div>
+</div>
+
+<div class="col-xs-6 col-ms-6 col-md-6"> 
+ <div class="field">
+  <%= f.label :celular , value: 'Celular Contacto:' %><br>
+  <%= f.text_field :celular %>
+</div>
+</div>
+
+
+
+
+</div>
+<!-- fin bloque row -->
+
+<div class="row">
+<div class="col-xs-6 col-ms-6 col-md-6"> 
   <div class="field">
-    <%= f.label :celular %><br>
-    <%= f.text_field :celular %>
+    <%= f.label :sucursal_entrega , value: 'Sucursal de entrega:' %><br>
+    <%= f.select :sucursal_entrega , ["Vicuna Mackena","Tobalaba","Domicilio"] %><br>
+    
   </div>
+</div>
+
+<div class="col-xs-6 col-ms-6 col-md-6"> 
+ <div class="field">
+  <%= f.label :telefono , value: 'Telefono Contacto:' %><br>
+  <%= f.text_field :telefono %>
+</div>
+</div>
+
+
+
+
+</div>
+<!-- fin bloque row -->
+
+<div class="row">
+<div class="col-xs-6 col-ms-6 col-md-6"> 
   <div class="field">
-    <%= f.label :telefono %><br>
-    <%= f.text_field :telefono %>
+    <%= f.label :direccion_entrega , value: 'Direccion de entrega:' %><br>
+    <%= f.text_area :direccion_entrega  %><br>
+    
   </div>
-  <div class="field">
-    <%= f.label :correo %><br>
-    <%= f.text_field :correo %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+
+<div class="col-xs-6 col-ms-6 col-md-6"> 
+ <div class="field">
+  <%= f.label :correo , value: 'Correo Contacto:' %><br>
+  <%= f.text_field :correo %>
+</div>
+</div>
+
+
+
+
+</div>
+<!-- fin bloque row -->
+
+</div> 
+<!-- fin bloque container -->
+
+
+
+
+
+
+
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>
