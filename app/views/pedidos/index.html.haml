@@ -21,7 +21,7 @@
         %td= link_to pedido.descripcion_corta ,pedido
         %td= pedido.estado_pedido 
         %td= pedido.fecha_entrega 
-        %td= pedido.hora_entrega
+        %td= pedido.hora_entrega.strftime("%H: %M")
         %td= pedido.sucursal_entrega 
         %td= pedido.direccion_entrega
         %td= pedido.abono

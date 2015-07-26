@@ -73,39 +73,42 @@
 
 <div class="row">
   <div class="col-xs-6 col-ms-6 col-md-6"> 
-  <strong>Fecha entrega:</strong>
-  <%= @pedido.fecha_entrega %>
+    <strong>Fecha entrega:</strong>
+    <%= @pedido.fecha_entrega %>
   </div>
 
   <div class="col-xs-6 col-ms-6 col-md-6"> 
-   <strong>Precio total:</strong>
-  <%= @pedido.precio_total %>
-  </div>
+   <strong>Precio total:</strong>text
+   <%= @pedido.precio_total %>
+ </div>
 </div>
 
 
 <div class="row">
   <div class="col-xs-6 col-ms-6 col-md-6"> 
- <strong>Hora entrega:</strong>
-  <%= @pedido.hora_entrega %>
-  </div>
+   <strong>Hora entrega:</strong>
+  
+    <%= @pedido.hora_entrega.strftime("%H: %M")%>
+   
+  
+</div>
 
-  <div class="col-xs-6 col-ms-6 col-md-6"> 
+<div class="col-xs-6 col-ms-6 col-md-6"> 
   <strong>Celular:</strong>
-  <%= @pedido.celular %>
-  </div>
+  <%= @pedido.celular%>
+</div>
 </div>
 
 
 <div class="row">
   <div class="col-xs-6 col-ms-6 col-md-6"> 
-  <strong>Sucursal entrega:</strong>
-  <%= @pedido.sucursal_entrega %>
+    <strong>Sucursal entrega:</strong>
+    <%= @pedido.sucursal_entrega %>
   </div>
 
   <div class="col-xs-6 col-ms-6 col-md-6"> 
-  <strong>Telefono:</strong>
-  <%= @pedido.telefono %>
+    <strong>Telefono:</strong>
+    <%= @pedido.telefono %>
   </div>
 </div>
 
@@ -113,13 +116,13 @@
 
 <div class="row">
   <div class="col-xs-6 col-ms-6 col-md-6"> 
-  <strong>Direccion entrega:</strong>
-  <%= @pedido.direccion_entrega %>
+    <strong>Direccion entrega:</strong>
+    <%= @pedido.direccion_entrega %>
   </div>
 
   <div class="col-xs-6 col-ms-6 col-md-6"> 
-  <strong>Correo:</strong>
-  <%= @pedido.correo %>
+    <strong>Correo:</strong>
+    <%= @pedido.correo %>
   </div>
 </div>
 
