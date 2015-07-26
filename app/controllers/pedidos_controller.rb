@@ -2,6 +2,7 @@ class PedidosController < ApplicationController
   before_action :set_pedido, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, :except => [:index, :show]
   before_action :authorized_user, only: [:edit, :update, :destroy]
+
   # GET /pedidos
   # GET /pedidos.json
   def index
@@ -41,9 +42,15 @@ class PedidosController < ApplicationController
   end
 
  def authorized_user
-  @linkpedido = current_user.pedidos.find_by(id: params[:id])
-  redirect_to pedidos_path, notice: "Not authorized to edit this link" if @pedido.nil?
-end
+  if current_user.encargado?
+  @linkpedido = Pedido.find_by(id: params[:id]) 
+  else 
+   @linkpedido = current_user.pedidos.find_by(id: params[:id]) 
+  end
+    redirect_to pedidos_path, notice: "No esta autorizado para editar este link" if @linkpedido.nil?
+ end
+
+
 
   # PATCH/PUT /pedidos/1
   # PATCH/PUT /pedidos/1.json

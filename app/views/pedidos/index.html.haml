@@ -17,7 +17,12 @@
 
     - @pedidos.each do |pedido|
       %tr
-        %td= link_to pedido.numero_pedido_general ,pedido
+        %td
+          - if pedido.borrado
+            %del        
+              = link_to pedido.numero_pedido_general ,pedido
+          - elsif
+            = link_to pedido.numero_pedido_general ,pedido
         %td= link_to pedido.cliente ,pedido
         %td= link_to pedido.descripcion_corta ,pedido
         %td

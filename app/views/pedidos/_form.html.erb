@@ -1,4 +1,4 @@
-<%= simple_form_for(@pedido) do |f| %>
+<%= simple_form_for(@linkpedido) do |f| %>
 <% if @pedido.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(@pedido.errors.count, "error") %> prohibited this pedido from being saved:</h2>
@@ -80,7 +80,7 @@
  <div class="col-xs-6 col-ms-6 col-md-6"> 
 
  <div class="field">
- <%= f.input :borrado, label:' Desea borrar el pedido ?', collection: [[true,'SI'],[false,'NO']], label_method: :last, value_method: :first, as: :radio_buttons , checked: true, item_wrapper_class: 'inline'%>
+ <%= f.input :borrado, label:' Desea borrar el pedido ?', collection: [[true,'SI'],[false,'NO']], label_method: :last, value_method: :first, as: :radio_buttons , checked: false, item_wrapper_class: 'inline'%>
 </div>
 </div>
 
