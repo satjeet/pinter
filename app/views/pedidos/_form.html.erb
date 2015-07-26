@@ -77,8 +77,16 @@
   </div>
 </div>
 
+ <div class="col-xs-6 col-ms-6 col-md-6"> 
+
+ <div class="field">
+ <%= f.input :borrado, label:' Desea borrar el pedido ?', collection: [[true,'SI'],[false,'NO']], label_method: :last, value_method: :first, as: :radio_buttons , checked: true, item_wrapper_class: 'inline'%>
+</div>
 </div>
 
+
+</div>
+<!-- fin bloque row -->
 
 <div class="row">
 
@@ -96,7 +104,9 @@
 <div class="row">
  <div class="col-xs-6 col-ms-6 col-md-6"> 
    <div class="field">
-     <%= f.input :estado_pedido,label:' Estado Pedido', disabled: false  %>
+    
+    <%= f.label :estado_pedido , value: 'Estado del Pedido:' %><br>
+    <%= f.select :estado_pedido , ["Pagado","Pago Pendiente","Reservado","Listo para"] %><br>
    </div>
 
 

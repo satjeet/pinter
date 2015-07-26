@@ -1,3 +1,4 @@
+
 %h1 Listado de Pedidos Pedidos
 
 .table-responsive
@@ -19,7 +20,12 @@
         %td= link_to pedido.numero_pedido_general ,pedido
         %td= link_to pedido.cliente ,pedido
         %td= link_to pedido.descripcion_corta ,pedido
-        %td= pedido.estado_pedido 
+        %td
+          - if pedido.borrado
+            %del
+              = pedido.estado_pedido 
+          - elsif 
+            = pedido.estado_pedido 
         %td= pedido.fecha_entrega 
         %td= pedido.hora_entrega.strftime("%H: %M")
         %td= pedido.sucursal_entrega 
