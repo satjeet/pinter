@@ -17,10 +17,18 @@ class PedidosController < ApplicationController
   # GET /pedidos/new
   def new
     @pedido = current_user.pedidos.build
+
+  if current_user.encargado?
+  @linkpedido = current_user.pedidos.build
+  else 
+  redirect_to pedidos_path, notice: "No esta autorizado para editar este link" if @linkpedido.nil?
+  end
+  
   end
 
   # GET /pedidos/1/edit
   def edit
+  
   end
 
   # POST /pedidos
@@ -70,10 +78,8 @@ class PedidosController < ApplicationController
   # DELETE /pedidos/1.json
   def destroy
     @pedido.destroy
-    respond_to do |format|
-      format.html { redirect_to pedidos_url, notice: 'Pedido was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+   
+    redirect_to root_path
   end
 
   private

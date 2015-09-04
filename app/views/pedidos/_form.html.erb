@@ -122,8 +122,8 @@
 
 <div class="col-xs-6 col-ms-6 col-md-3"> 
   <div class="field">
-    <%= f.label :metodo_pago %><br>
-    <%= f.text_field :metodo_pago %>
+    <%= f.label :metodo_pago , value: 'Metodo de Pago:'%><br>
+    <%= f.select :metodo_pago , ["Transferencia","Efectivo","Cheque","Otro metodo"]%>
   </div>
 </div>
 

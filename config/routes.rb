@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: "users/sessions" }
   resources :pedidos
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root "pedidos#index"
 
+
+devise_scope :user do
+  get "users/administracion", to: "users/sessions#administracion"
+  get "users/adminuser", to: "users/sessions#adminuser"
+  
+end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

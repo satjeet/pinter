@@ -1,0 +1,13 @@
+<h1>Editing Usuarios</h1>
+<% @admins.each do |user| %>
+<%= user.email %> <br>
+ <%= link_to user.email, users_path(user) %><br>
+ <% end %>
+
+
+
+
+
+<%= link_to 'Show', @linkpedido %> |
+<%= link_to 'Back', pedidos_path %>
+

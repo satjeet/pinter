@@ -1,0 +1,48 @@
+<h1>Editing Usuarios</h1>
+
+
+<%= simple_form_for(@linkuser) do |f| %>
+<% if @linkuser.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@linkuser.errors.count, "error") %> prohibited this pedido from being saved:</h2>
+
+  <ul>
+    <% @linkuser.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+<div class="container">
+
+
+
+     <div class="field">
+       <%= f.input :numero_pedido_general,label:' ID del pedido', disabled: false  %>
+     </div>
+
+
+ 
+
+</div> 
+<!-- fin bloque container -->
+
+
+
+
+
+
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
+
+
+
+
+<%= link_to 'Show', @linkpedido %> |
+<%= link_to 'Back', pedidos_path %>
+
